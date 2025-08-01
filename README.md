@@ -7,20 +7,34 @@ This mod enables playing **any mutator on any level at any time**, and even allo
 Currently, only **PCVR** versions are supported (Steam and Oculus Rift). Meta Quest, Pico, and PSVR are not supported.
 
 > [!IMPORTANT]
-> This mod is currently in **Beta** status - testing and feedback is encouraged! If you run into any issues, please open an [Issue](https://github.com/Dteyn/ATFMutationStation/issues) or DM me on Discord so it can be fixed. See the [Beta Testing](#beta-testing) section for things that are needing testing.
+> This mod is currently in **Beta** status - testing and feedback is encouraged to help work out any bugs before stable release. If you run into any issues, please open an [Issue](https://github.com/Dteyn/ATFMutationStation/issues) or DM me on Discord so it can be fixed. See the [Beta Testing](#beta-testing) section for things that are needing testing.
+
+---
+
+## Disclaimer
+
+> [!WARNING]
+> Modding is done at your own risk!!
+
+___After the Fall is a multiplayer game, and when modding multiplayer games there is always a risk of being banned.___
+
+While I've not heard of anyone getting banned for modding After the Fall, be aware that you are modding the game at your own risk.
+
+In general, game mods can also cause unexpected behavior or crashes. While I can't guarantee problem-free modding, I'm happy to help troubleshoot if you run into issues.
 
 ---
 
 ## Table of Contents
 
+* [Disclaimer](#disclaimer)
 * [What does ATF MutationStation do?](#what-does-atf-mutationstation-do)
 * [Compatibility](#compatibility)
 * [Installation](#installation)
 * [Uninstallation](#uninstallation)
 * [Using the GUI](#using-the-gui)
 * [Advanced Usage (Editing CFG Directly)](#advanced-usage-editing-cfg-directly)
+* [Known Issues](#known-issues)
 * [Troubleshooting](#troubleshooting)
-* [Disclaimer](#disclaimer)
 * [Feedback & Support](#feedback--support)
 * [Shout-Outs](#shout-outs)
 
@@ -334,6 +348,16 @@ It may be possible to restore these mutator effects with further mods in the fut
 
 ---
 
+## Known Issues
+
+Currently, when using a Custom Mutator Package, the name of of the mutator package is not updated which may be confusing.
+
+In other words, if the current mutator is Snow Plow, it'll still say 'Snow Plow' on the enlisting machine, and in the game menu during the level - however the custom mutator effects you've chosen will be displayed properly. Only the title will be displayed incorrectly.
+
+In a future version I intend to patch the mutator package title so it shows '**CUSTOM MUTATOR**' so this won't be confusing.
+
+---
+
 ## Troubleshooting
 
 > [!IMPORTANT]
@@ -384,19 +408,6 @@ Other ideas:
 - At the moment, the GUI is simple and fairly limited, I'd like to rewrite it in C# and have a nicer looking GUI to go alongside the app.
 
 - Some way to communicate custom mutator selection in-game to other players using the mod would be great, to prevent the need for each player to manually synchronize settings.
-
----
-
-## Disclaimer
-
-> [!WARNING]
-> Modding is done at your own risk!!
-
-___After the Fall is a multiplayer game, and when modding multiplayer games there is always a risk of being banned.___
-
-While I've not heard of anyone getting banned for modding After the Fall, be aware that you are modding the game at your own risk.
-
-In general, game mods can also cause unexpected behavior or crashes. While I can't guarantee problem-free modding, I'm happy to help troubleshoot if you run into issues.
 
 ---
 
