@@ -1,15 +1,15 @@
 # ATF MutationStation
 
-<img width="849" height="400" alt="image" src="https://github.com/user-attachments/assets/129ff3db-2d30-40b7-ab86-1a3e4b1c0270" />
+<img width="691" height="200" alt="image" src="https://github.com/user-attachments/assets/dfd96ad9-e91b-4e7b-94d3-9b8eadf24c33" />
 
 **ATF MutationStation** is a mod for creating custom Mutator Runs in [After the Fall VR](https://www.afterthefall-vr.com/) by Vertigo Games.
 
-This mod enables playing **any mutator on any level at any time**, and even allows you to create your own **custom mutators** by combining individual effects.
+This mod enables playing **any mutator on any level at any time**, instead of being restricted to only the 'current' mutator.
 
 Currently, only **PCVR** versions are supported (Steam and Oculus Rift). Meta Quest, Pico, and PSVR are not supported.
 
 > [!IMPORTANT]
-> This mod is currently in **Beta** status - testing and feedback is encouraged to help work out any bugs before stable release. If you run into any issues, please open an [Issue](https://github.com/Dteyn/ATFMutationStation/issues) or DM me on Discord so it can be fixed. See the [Beta Testing](#beta-testing) section for things that are needing testing.
+> This mod is currently in **Beta** status - testing and feedback is encouraged to help work out any bugs before stable release. If you run into any issues, please open an [Issue](https://github.com/Dteyn/ATFMutationStation/issues) or DM me on Discord so it can be fixed. See [Known Issues](#known-issues) for things to be aware of, and the [Beta Testing](#beta-testing) section for things that are needing testing.
 
 ---
 
@@ -48,7 +48,14 @@ ATF MutationStation lets you customize Mutator Runs in *After the Fall VR* by al
 
 Normally, the game restricts mutator packages and levels to a set combo, rotating every two hours. With this mod, you can choose **any level with any mutator at any time you wish**.
 
-You can even **craft your own unique mutator combos** to challenge yourself and your friends, or just have fun!
+### How is it used?
+
+The mod changes the mutator displayed on the Enlisting machine in the lobby. Once the mod is installed and you've selected a level and mutator package, loading into the game will show your selection on the Enlisting machine.
+
+Hot reload is supported. The settings are reloaded when you load into The Line, so changing settings between runs is possible without restarting the game.
+
+> [!NOTE]
+> For playing a custom level on the current mutator, **only the host** needs the mod installed. If playing custom levels and custom mutators, ___all players___ need the mod installed.
 
 ### Mutator Packages
 
@@ -100,6 +107,9 @@ Here is a list of the 13 individual mutator effects:
 
 ### Custom Mutator Packages
 
+> [!NOTE]
+> Currently, 'Custom Mutators' mode is under development and has some bugs. It can be accessed only via editing .cfg directly and results may vary. See [Known Issues](#known-issues) for more details.
+
 By combining any of the above effects, you can create your own custom mutator packages. Choose the ones you want and let the chaos ensue!
 
 ---
@@ -110,65 +120,64 @@ By combining any of the above effects, you can create your own custom mutator pa
 * Tested and working on **PCVR** (both Steam and Oculus Rift versions).
 * **Not compatible** with Meta Quest, Pico, or PSVR versions. Sorry!
 
+Note that to play the *currently active mutator* on *any* level, **only the host** needs the mod installed. Unmodded players can join custom levels as long as you don't change the mutator selection.
+
+However if selecting a custom mutator as well, **all players** must have the mod installed.
+
 ---
 
 ## Installation
 
-To install the mod, you'll need to download and install [BepInEx](https://github.com/BepInEx) and then the place ATF MutationStation's `.dll` file into the `BepInEx\plugins` folder.
+1. **Download and Install**
 
-1. **Install BepInEx:**
-
-   * Download and extract [BepInEx\_UnityIL2CPP\_x64\_6.0.0-pre.1.zip](https://github.com/BepInEx/BepInEx/releases/download/v6.0.0-pre.1/BepInEx_UnityIL2CPP_x64_6.0.0-pre.1.zip) to your After the Fall game folder:
+   *  Grab the latest `ATFMutationStation-vX.X.X.zip` from the [Releases](https://github.com/Dteyn/ATFMutationStation/releases) section.
+   
+   * Extract the .zip file to your After the Fall game folder:
 
      * **Steam default location:** `C:\Program Files (x86)\Steam\steamapps\common\After The Fall`
 
      * **Rift default location:** `C:\Program Files\Oculus\Software\Software\vertigo-games-snowbreed`  
-
-> [!NOTE]
-> This mod specifically requires **BepInEx 6.0.0-pre1** (Unity IL2CPP variant) and will not work correctly with other versions.      
-
-2. **Install ATF MutationStation plug-in:**
-
-   * Grab the latest `ATFMutationStation-vX.X.X.zip` from the [Releases](https://github.com/Dteyn/ATFMutationStation/releases).
-
-   * Extract and copy the contents into your After the Fall game folder.
 
    To verify installation, check for the folllowing files in your game folder:
 
    * `BepInEx\plugins\ATFMutationStation.dll`
    * `BepInEx\config\com.dteyn.atf.mutationstation.cfg`
 
-3. **Adjust Mutator Settings:**
+2. **Adjust Mutator Settings:**
 
    With the mod installed, you can now adjust mutator settings. You can do this in two ways:
 
-   1. Use the GUI to change settings
+   1. **Use the GUI to change settings** - see [Using the GUI](#using-the-gui)
 
-   2. Edit the config file manually
+   2. **Edit the config file manually** - see [Advanced Usage](#advanced-usage-editing-cfg-directly)
 
-   A guide on both of these options is further down on this page.
+   The mod supports hot reload. When loading into The Line the config is reloaded, which allows you to change mutators between runs without restarting the game.
 
-> [!TIP]
-> The mod supports hot reload! When loading into The Line the config is reloaded, which allows you to change mutators between runs without restarting the game.
-
-4. **Launch the Game:**
+3. **Launch the Game:**
 
    Once you've changed the mutator settings, launch the game and your new mutator selection should be active on the Enlisting machine in the lobby.
 
 > [!NOTE]
 > On your first launch after installation, expect a slightly longer startup as BepInEx does some initial setup.
 
-> [!TIP]
-> The version of BepInEx used also supports **Astienth's** **bHaptics** and **ProVolver** mods for ATF! Don't miss those if you have haptic gear!
+> [!IMPORTANT]
+> This mod uses [BepInEx](https://github.com/BepInEx) version [___6.0.0-pre.1___](https://github.com/BepInEx/BepInEx/releases/download/v6.0.0-pre.1/BepInEx_UnityIL2CPP_x64_6.0.0-pre.1.zip). Other versions of BepInEx are not compatible. If you have an [OWO Vest](https://owogame.com), be aware that mod uses BIE 6.0.0-pre2 which is not compatible. I've recompiled the OWO mod for pre1 which can be obtained here: [OWO AfterTheFall v1.0.1 for BIE 6.0.0-pre1](https://github.com/Dteyn/OWO_AfterTheFall/releases/tag/1.0.1)
 
-* [bHaptics for ATF](https://github.com/Astienth/AftertheFall_bHaptics)
-* [ProVolver for ATF](https://github.com/Astienth/AfterTheFall_Provolver)
+> [!TIP]
+> The version of BepInEx used supports **Astienth's** **bHaptics** and **ProVolver** mods for After the Fall! Don't miss those if you have [bHaptics](https://www.bhaptics.com) or [ProVolver](https://protubevr.com) gear!
+
+* [bHaptics mod for After the Fall](https://github.com/Astienth/AftertheFall_bHaptics)
+* [ProVolver mod for After the Fall](https://github.com/Astienth/AfterTheFall_Provolver)
 
 ---
 
 ## Uninstallation
 
-Removing or disabling ATF MutationStation is easy; you can use any of these methods:
+Disabling or removing ATF MutationStation is easy; you can use any of these methods:
+
+* **Set selections to 'None'**: You can disable MutationStation by setting the level and mutator package to 'None' - doing this effectively returns After the Fall to it's stock behaviour, so you don't need to remove the mod to disable it. Just set both options to 'None' in the GUI or .cfg file.
+
+or
 
 * **Disable Mod Only:** Delete `ATFMutationStation.dll` from `BepInEx/plugins`. This will remove the .dll the mod uses, but will leave other mods intact. You can also create a new folder, `BepInEx/plugins-disabled` and move any plugins you wish to disable into that folder, then move back later to re-enable them.
 
@@ -184,13 +193,13 @@ or
 
 ## Using the GUI
 
-### ATF MutationStation GUI
+<img width="691" height="200" alt="image" src="https://github.com/user-attachments/assets/dfd96ad9-e91b-4e7b-94d3-9b8eadf24c33" />
 
 The MutationStation mod itself is controlled by a config file. To make life easier I've created a simple GUI which can be used to edit the config file and change mutator runs.
 
-The recommended location is to place it within your `After the Fall` game folder, and then make a shortcut to it on your Desktop or Start Menu.
+___NOTE: The GUI must be downloaded separately___; it's not included with the base mod. See instructions below.
 
-**Versions Available:**
+### Versions Available
 
 The GUI is available as a Python script, as well an `.exe` version. The only difference is the `.exe` version doesn't need Python installed since everything is self-contained in the `.exe`.
 
@@ -199,32 +208,26 @@ The GUI is available as a Python script, as well an `.exe` version. The only dif
 
 Any virus warning can safely be ignored, but if it bothers you, using the Python script is recommended since you can easily inspect the source code if you wish.
 
+Regardless of which version you choose, the recommended location is to place it within your `After the Fall` game folder, and then make a shortcut to it on your Desktop or Start Menu.
+
+#### Standalone `.exe` version
+
+1. Download `ATFMutationStation-GUI-exe-vX.X.X.zip` from the Releases section and extract it to your After the Fall game folder.
+
+2. Run `ATFMutationStation-vX.X.X.exe` to start the GUI.
 
 #### Python script version
 
 1. Install Python 3.x (https://python.org)
 
-2. Download `ATFMutationStation-GUI-Python-vX.X.X.zip` and extract it to your After the Fall game folder.
+2. Download `ATFMutationStation-GUI-Python-vX.X.X.zip` from the Releases section and extract it to your After the Fall game folder.
 
 3. Run `ATFMutationStation-vX.X.X.pyw` to start the GUI.
-
-> [!TIP]
-> You can also create a shortcut to the `.pyw` file on your Desktop or Start menu to more easily start the GUI.
-
-#### Standalone `.exe` version
-
-1. Download `ATFMutationStation-GUI-exe-vX.X.X.zip` and extract it to your After the Fall game folder.
-
-2. Run `ATFMutationStation-vX.X.X.exe` to start the GUI.
-
-> [!TIP]
-> You can also create a shortcut to the `.exe` file on your Desktop or Start menu to more easily start the GUI.
-
 
 #### GUI Usage:
 
 > [!NOTE]
-> Make sure you've installed the mod itself first per instructions above before running the GUI! The mod and GUI are separate files for install.
+> Make sure you've installed the mod itself first per instructions above before running the GUI! The mod and GUI are installed separately.
 
 > [!IMPORTANT]
 > All players must be using the same version of the mod and using the same settings if playing with custom mutators. Otherwise, desynchronizations may happen resulting in invisible enemies or other strange issues.
@@ -233,12 +236,21 @@ Upon launching the GUI, you'll see a window with a box to select your After the 
 
 The GUI will expect the ATF MutationStation config file to be present at: `BepInEx\config\com.dteyn.atf.mutationstation.cfg`
 
-* Select your After the Fall game folder which contains `AfterTheFall.exe`
+* Select your After the Fall game folder which contains `AfterTheFall.exe`:
+     * **Steam default location:** `C:\Program Files (x86)\Steam\steamapps\common\After The Fall`
+
+     * **Rift default location:** `C:\Program Files\Oculus\Software\Software\vertigo-games-snowbreed` 
+
 * Choose your level and mutator package from dropdown menus. You can choose from any of the pre-defined mutator packages.
-* To create a custom mutator package, select "Custom Mutator Package" and pick any three mutators you wish.
 * Click the Save Config button, then launch the game.
 
 Your custom mutator selection should now appear in the Enlisting machine in The Line.
+
+
+* ~~To create a custom mutator package, select "Custom Mutator Package" and pick any three mutators you wish.~~
+
+> [!NOTE]
+> The Custom Mutators feature is currently buggy and therefore only accessible from the .cfg file directly; it will be enabled in the GUI a future release.
 
 > [!TIP]
 > You can also change mutators while the game is running. The best time to do this is during a level, since when you load back to The Line the config is reloaded. You can also change it while at The Line, but you'll need to go into a level, then exit out to see the changes take effect.
@@ -273,7 +285,7 @@ Once the mod is installed, the config file is located at: `\BepInEx\config\com.d
 ## Default: None
 # Setting type: String
 # Default value: None
-CustomGameplayLevel = Skidrow
+CustomGameplayLevel = BankTower02
 
 ## Option: MutatorPackageId
 ## ==============================
@@ -288,7 +300,7 @@ CustomGameplayLevel = Skidrow
 ## 
 # Setting type: Int32
 # Default value: -1 (Disabled)
-MutatorPackageId = 999
+MutatorPackageId = 7
 
 ## Option: CustomMutators
 ## ======================
@@ -312,7 +324,7 @@ MutatorPackageId = 999
 ## 
 # Setting type: String
 # Default value: 0,3,9
-CustomMutators = 0,3,9
+CustomMutators = none
 ```
 
 | Setting                 | Description                                              | Example Values                                        |
@@ -320,6 +332,9 @@ CustomMutators = 0,3,9
 | **CustomGameplayLevel** | Selects level for the mutator run                       | Skidrow, Chinatown02, Downtown, etc. <br>None = default mutator level                  |
 | **MutatorPackageId**    | Selects predefined mutator package | 0-14 or -1 = disabled <br> 999 = custom mutators                                |
 | **CustomMutators**      | Mutator IDs to apply                | `0,3,9` (comma-separated mutator IDs) |
+
+> [!NOTE]
+> The CustomMutators option currently has some bugs - see [Known Issues](#known-issues) for details.
 
 > [!IMPORTANT]
 > All players must be using the same version of the mod and using the same settings if playing with custom mutators. Otherwise, desynchronizations may happen resulting in invisible enemies or other strange issues.
@@ -352,11 +367,23 @@ It may be possible to restore these mutator effects with further mods in the fut
 
 ## Known Issues
 
-Currently, when using a Custom Mutator Package, the name of of the mutator package is not updated which may be confusing.
+### [Custom Mutators not working as expected](https://github.com/Dteyn/ATFMutationStation/issues/1)
+
+In release v0.3.0, the 'Custom Mutators' mode is not working as expected. Some mutators seem to work fine, but other mutators don't work (for example, 'Dry Season' still allows health restore).
+
+In addition, it seems like residual mutator effects from the 'current' mutator are still active. I'll fix this in a future release but for now wanted to make v0.3.0 available as it works fine for selecting a custom level and predefined mutator package.
+
+### [Mutator Title doesn't update in custom mutator mode](https://github.com/Dteyn/ATFMutationStation/issues/2)
+
+When using a Custom Mutator Package, the name of of the mutator package is not updated which may be confusing.
 
 In other words, if the current mutator is Snow Plow, it'll still say 'Snow Plow' on the enlisting machine, and in the game menu during the level - however the custom mutator effects you've chosen will be displayed properly. Only the title will be displayed incorrectly.
 
 In a future version I intend to patch the mutator package title so it shows '**CUSTOM MUTATOR**' so this won't be confusing.
+
+### [Mutator Title doesn't update when receiving an invite](https://github.com/Dteyn/ATFMutationStation/issues/3)
+
+When an invite is received, it will display the current mutator regardless of which package may be selected. A fix will be required to update the popup notification to display the custom mutator selected (or 'CUSTOM MUTATOR' as described above).
 
 ---
 
@@ -381,11 +408,13 @@ If using the GUI, you can also check the `output.log` file (in the same folder a
 
 ## Beta Testing
 
-Below is a list of things I can think of that need testing:
+As noted in [Known Issues](#known-issues), the Custom Mutators mode is still buggy and needs more testing. But before then, I need to fix the custom mutator mode, so testing in this area is currently futile until bugs are fixed.
 
-* Ensuring no 'residual' mutator effects from the actual "current" mutator are active while the mod is overriding effects
+With that said; anyone is still welcome to try out the custom mutator mode. It may not give expected results, but also won't break anything so there isn't a risk of harm or anything like that. It just may not have consistent results from my testing.
 
-* All combinations of custom mutators need testing, none should crash the game or cause issues but it's possible there is some strange underlying issue
+Below is a list of other things I can think of that need testing:
+
+* Once fixed, all combinations of custom mutators need testing, none should crash the game or cause issues but it's possible there is some strange underlying issue
 
 * I think it's possible to use more than 3 mutators at once. Editing the config manually should allow this, if this is working then I'll update the GUI so more than 3 can be selected.
 
@@ -409,7 +438,7 @@ Other ideas:
 
 - At the moment, the GUI is simple and fairly limited, I'd like to rewrite it in C# and have a nicer looking GUI to go alongside the app.
 
-- Some way to communicate custom mutator selection in-game to other players using the mod would be great, to prevent the need for each player to manually synchronize settings.
+- An internal means to communicate the host's custom mutator selection to other players using the mod would be great, to prevent the need for each player to manually synchronize settings.
 
 ---
 
