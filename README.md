@@ -195,11 +195,11 @@ Got issues, suggestions, or questions? The best way to contact me is to open an 
 
 ### [Astienth](https://github.com/Astienth)
 
-My good friend **Astienth** makes some amazing VR plugins that you must check out!
+My good friend **Astienth** makes some amazing VR stuff that you must check out!
 
-He has made tons of **bHaptics** and **ProVolver** plugins, including a [bHaptics plugin for ATF](https://github.com/Astienth/AftertheFall_bHaptics) and a [ProVolver plugin for ATF](https://github.com/Astienth/AfterTheFall_Provolver). Give them a try if you have haptic gear!
+He has made tons of **bHaptics** and **ProVolver** implementations, including a [bHaptics implementation for ATF](https://github.com/Astienth/AftertheFall_bHaptics) and a [ProVolver implementation for ATF](https://github.com/Astienth/AfterTheFall_Provolver). Give them a try if you have haptic gear!
 
-Astienth also makes a ton of other great flat2VR plugins, be sure to check out his list of projects on his GitHub page!
+Astienth also makes a ton of great **flat2VR** conversions, adding VR support to many flatscreen games. Be sure to check out his list of projects on his GitHub page!
 
 - [github.com/Astienth](https://github.com/Astienth)
 
