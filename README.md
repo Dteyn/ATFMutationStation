@@ -1,5 +1,8 @@
 # ATF MutationStation
 
+![Latest release](https://img.shields.io/github/v/release/Dteyn/ATFMutationStation?include_prereleases)
+![Downloads](https://img.shields.io/github/downloads/Dteyn/ATFMutationStation/total)
+
 ![ATF MutationStation screenshot](https://github.com/Dteyn/ATFMutationStation/blob/main/assets/images/screenshot.jpg)
 
 
